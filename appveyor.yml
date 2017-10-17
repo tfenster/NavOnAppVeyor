@@ -8,7 +8,7 @@ environment:
     secure: M8IUlFrsHzvLBkqcr/qzHRv42PiUf21D/ZSU/1uAXa/9R2VRSa2Zuz9oSyrkPFLy
 
 install:
-  - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+  - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS" navdocker.azurecr.io
   - docker run -e ACCEPT_EULA -e username admin -e password abc123ABC. -d --name devpreview --hostname devpreview navdocker.azurecr.io/dynamics-nav:devpreview-october-finus
   - git clone https://github.com/Microsoft/navcontainerhelper
   - ps: .\install.ps1
