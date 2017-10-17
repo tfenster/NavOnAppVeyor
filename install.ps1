@@ -31,8 +31,9 @@ git clone https://github.com/Microsoft/navcontainerhelper
 & ./navcontainerhelper/NavContainerHelper.ps1
 Wait-NavContainerReady devpreview
 
+$ip = docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}"
 $vsix = docker exec devpreview powershell '(Get-Item ''C:\run\*.visx'').Name'
-Invoke-WebRequest -Uri "http://devpreview:8080/$vsix" -OutFile "$vsix.zip"
+Invoke-WebRequest -Uri "http://$ip:8080/$vsix" -OutFile "$vsix.zip"
 Expand-Archive -Path "$vsix.zip"
 
 $user = 'admin'
@@ -44,5 +45,5 @@ $basicAuthValue = "Basic $base64"
 $headers = @{ Authorization = $basicAuthValue }
 
 New-Item -ItemType Directory -Name "alpackages"
-Invoke-RestMethod -Method Get -Uri 'https://devpreview:7049/NAV/dev/packages?publisher=Microsoft&appName=US&versionText=11.0.0.0' -Headers $headers -OutFile 'alpackages\US.app'
-Invoke-RestMethod -Method Get -Uri 'https://devpreview:7049/NAV/dev/packages?publisher=Microsoft&appName=System&versionText=11.0.0.0' -Headers $headers -OutFile 'alpackages\System.app'
+Invoke-RestMethod -Method Get -Uri 'https://'+$ip+':7049/NAV/dev/packages?publisher=Microsoft&appName=US&versionText=11.0.0.0' -Headers $headers -OutFile 'alpackages\US.app'
+Invoke-RestMethod -Method Get -Uri 'https://'+$ip+':7049/NAV/dev/packages?publisher=Microsoft&appName=System&versionText=11.0.0.0' -Headers $headers -OutFile 'alpackages\System.app'
