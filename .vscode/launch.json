@@ -1,0 +1,15 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "al",
+			"request": "launch",
+			"name": "Local server",
+			"server": "http://localhost",
+			"serverInstance": "navision_main",
+			"tenant": "default",
+			"authentication": "Windows",
+			"startupObjectId": 22
+		}
+	]
+}

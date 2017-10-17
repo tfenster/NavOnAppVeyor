@@ -1,0 +1,17 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+
+environment:
+  DOCKER_USER:
+    secure: 2flXvzVdw16TSVRWNApT2mPPxP/RVwx3Nj8dJvqV9iNAvkf8cehBDbvYeykg2xtj
+  DOCKER_PASS:
+    secure: M8IUlFrsHzvLBkqcr/qzHRv42PiUf21D/ZSU/1uAXa/9R2VRSa2Zuz9oSyrkPFLy
+
+install:
+  - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+  - docker run -e ACCEPT_EULA -e username admin -e password abc123ABC. -d --name devpreview --hostname devpreview navdocker.azurecr.io/dynamics-nav:devpreview-october-finus
+  - git clone https://github.com/Microsoft/navcontainerhelper
+  - ps: .\install.ps1
+
+build_script:
+  - ps: .\build.ps1

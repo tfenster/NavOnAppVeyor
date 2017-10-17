@@ -1,0 +1,26 @@
+{
+  "id": "60bcf18e-f496-4234-9feb-d6f10b4e1d33",
+  "name": "NavOnAppVeyor",
+  "publisher": "Default publisher",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "compatibilityId": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": {
+    "version": "11.0.0.0",
+    "locale": "US"
+  },
+  "idRange": {
+    "from": 50100,
+    "to": 50149
+  }
+}

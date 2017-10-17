@@ -1,0 +1,1 @@
+extension\bin\alc.exe /project:c:\projects\NavOnAppVeyour /packagecachepath:alpackage
