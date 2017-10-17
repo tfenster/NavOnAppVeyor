@@ -1,1 +1,1 @@
-extension\bin\alc.exe /project:c:\projects\NavOnAppVeyour /packagecachepath:alpackage
+.\extension\bin\alc.exe /project:c:\projects\NavOnAppVeyour /packagecachepath:alpackage

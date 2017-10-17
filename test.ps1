@@ -1,0 +1,1 @@
+if (-not (Test-Path '.\*.app')) { $host.SetShouldExit(1)  }
