@@ -25,7 +25,7 @@ public class ServerCertificateValidationCallback
 [ServerCertificateValidationCallback]::Ignore();
 
 docker login navdocker.azurecr.io -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
-docker run -e ACCEPT_EULA -e username=admin -e password=abc123ABC. -d --name=devpreview --hostname=devpreview navdocker.azurecr.io/dynamics-nav:devpreview-finus
+docker run -e ACCEPT_EULA=Y -e username=admin -e password=abc123ABC. -d --name=devpreview --hostname=devpreview navdocker.azurecr.io/dynamics-nav:devpreview-finus
 
 git clone https://github.com/Microsoft/navcontainerhelper
 & ./navcontainerhelper/NavContainerHelper.ps1
