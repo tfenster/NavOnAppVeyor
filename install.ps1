@@ -24,9 +24,13 @@ public class ServerCertificateValidationCallback
 
 [ServerCertificateValidationCallback]::Ignore();
 
+docker login navdocker.azurecr.io -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+docker run -e ACCEPT_EULA -e username admin -e password abc123ABC. -d --name devpreview --hostname devpreview navdocker.azurecr.io/dynamics-nav:devpreview-october-finus
 
+git clone https://github.com/Microsoft/navcontainerhelper
 & ./navcontainerhelper/NavContainerHelper.ps1
 Wait-NavContainerReady devpreview
+
 $vsix = docker exec devpreview powershell '(Get-Item ''C:\run\*.visx'').Name'
 Invoke-WebRequest -Uri "http://devpreview:8080/$vsix" -OutFile "$vsix.zip"
 Expand-Archive -Path "$vsix.zip"
