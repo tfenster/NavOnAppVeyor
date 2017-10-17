@@ -45,5 +45,5 @@ $basicAuthValue = "Basic $base64"
 $headers = @{ Authorization = $basicAuthValue }
 
 New-Item -ItemType Directory -Name "alpackages"
-Invoke-RestMethod -Method Get -Uri 'https://'+$ip+':7049/NAV/dev/packages?publisher=Microsoft&appName=US&versionText=11.0.0.0' -Headers $headers -OutFile 'alpackages\US.app'
-Invoke-RestMethod -Method Get -Uri 'https://'+$ip+':7049/NAV/dev/packages?publisher=Microsoft&appName=System&versionText=11.0.0.0' -Headers $headers -OutFile 'alpackages\System.app'
+Invoke-RestMethod -Method Get -Uri ('https://'+$ip+':7049/NAV/dev/packages?publisher=Microsoft&appName=US&versionText=11.0.0.0') -Headers $headers -OutFile 'alpackages\US.app'
+Invoke-RestMethod -Method Get -Uri ('https://'+$ip+':7049/NAV/dev/packages?publisher=Microsoft&appName=System&versionText=11.0.0.0') -Headers $headers -OutFile 'alpackages\System.app'
