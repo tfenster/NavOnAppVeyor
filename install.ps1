@@ -34,8 +34,8 @@ Wait-NavContainerReady devpreview
 $ip = docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" devpreview
 $vsix = docker exec devpreview powershell "(Get-Item 'C:\run\*.vsix').Name"
 Invoke-WebRequest -Uri ('http://'+$ip+':8080/'+$vsix) -OutFile ($vsix+'.zip')
-Get-ChildItem .
 Expand-Archive -Path ('.\'+$vsix+'.zip')
+Get-ChildItem .
 
 $user = 'admin'
 $pass = 'abc123ABC.'
