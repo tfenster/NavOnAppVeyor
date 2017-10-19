@@ -3,9 +3,9 @@ image: Visual Studio 2017
 
 environment:
   DOCKER_USER:
-    secure: 2flXvzVdw16TSVRWNApT2mPPxP/RVwx3Nj8dJvqV9iNAvkf8cehBDbvYeykg2xtj
+    secure: z9p+VIf4i3zHPz1EcNXxiA==
   DOCKER_PASS:
-    secure: M8IUlFrsHzvLBkqcr/qzHRv42PiUf21D/ZSU/1uAXa/9R2VRSa2Zuz9oSyrkPFLy
+    secure: 7RwKlBUv2qxXMJYfQbAeH0moWB5EZRhqfiPeGPykDOxJD5U8ChgXPPlH0e9OLlKM
 install:
   - ps: .\install.ps1
 

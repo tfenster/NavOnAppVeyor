@@ -1,1 +1,1 @@
-c:\projects\navonappveyor\extension\bin\alc.exe /project:c:\projects\NavOnAppVeyor /packagecachepath:c:\projects\NavOnAppVeyor\alpackages
+docker run -v .:c:\result arssolvendi.azurecr.io/dynamics-nav:devpreview-finus-build "c:\build\extension\bin\alc.exe /project:c:\projects\NavOnAppVeyor /packagecachepath:c:\build /out:c:\result\compiled.app"
