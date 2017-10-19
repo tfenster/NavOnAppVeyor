@@ -1,1 +1,1 @@
-if (-not (Test-Path .\compiled.app')) { $host.SetShouldExit(1)  }
+if (-not (Test-Path 'c:\result\compiled.app')) { $host.SetShouldExit(1)  }

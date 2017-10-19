@@ -1,0 +1,1 @@
+c:\build\extension\bin\alc.exe /project:c:\projects\%APPVEYOR_PROJECT_NAME% /packagecachepath:c:\build /out:c:\result\compiled.app
