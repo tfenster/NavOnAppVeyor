@@ -1,4 +1,4 @@
-FROM navdocker.azurecr.io/dynamics-nav:devpreview-finus AS full
+FROM microsoft/dynamics-nav:devpreview-finus AS full
 ENV ACCEPT_EULA Y
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 COPY scripts c:/run/my
